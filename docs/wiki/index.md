@@ -11,8 +11,8 @@ the work behind them is written up: what was measured, how, what came out,
 and what was chosen because of it. Every study has its numbers and its
 method, so a reader can check them or run them again.
 
-The [README](https://github.com/feder-cr/invisible_dots#readme) is how to run
-invisible_dots; [the architecture](https://github.com/feder-cr/invisible_dots/blob/main/docs/architecture.md)
+The [README](https://github.com/oss-invisible/dots#readme) is how to run
+invisible_dots; [the architecture](https://github.com/oss-invisible/dots/blob/main/docs/architecture.md)
 is how it is built.
 
 ## [Studies](studies.md)

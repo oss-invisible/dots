@@ -4,12 +4,12 @@ Issues and pull requests are welcome.
 
 ## Quick links
 
-- **Setup or `doctor` fails?** Open a [setup report](https://github.com/feder-cr/invisible_dots/issues/new?template=01-setup.yml).
-- **A Dot, the web UI or the command line misbehaves?** Open a [bug report](https://github.com/feder-cr/invisible_dots/issues/new?template=02-bug.yml).
-- **Idea?** Open a [feature request](https://github.com/feder-cr/invisible_dots/issues/new?template=03-feature.yml).
+- **Setup or `doctor` fails?** Open a [setup report](https://github.com/oss-invisible/dots/issues/new?template=01-setup.yml).
+- **A Dot, the web UI or the command line misbehaves?** Open a [bug report](https://github.com/oss-invisible/dots/issues/new?template=02-bug.yml).
+- **Idea?** Open a [feature request](https://github.com/oss-invisible/dots/issues/new?template=03-feature.yml).
 - **Security issue?** Do **not** open a public issue: see [SECURITY.md](SECURITY.md).
 - **A site detects or blocks the browser?** That belongs to
-  [invisible_playwright](https://github.com/feder-cr/invisible_playwright/issues), the Dot's browser.
+  [invisible_playwright](https://github.com/oss-invisible/playwright/issues), the Dot's browser.
 
 ## Development
 

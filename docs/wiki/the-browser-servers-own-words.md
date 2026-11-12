@@ -94,7 +94,7 @@ puts a turn with every permission at about 34,000 tokens.
 
 ## Sources
 
-- [invisible-playwright-mcp](https://github.com/feder-cr/invisible_playwright_mcp):
+- [invisible-playwright-mcp](https://github.com/oss-invisible/playwright_mcp):
   `mcp/server.py` (`PAGE_RULES`, `INVISIBLE_MCP_HOST_MANAGED`).
 - [opencode](https://github.com/anomalyco/opencode): `packages/core/src/mcp/instructions.ts`.
 - [playwright-mcp](https://github.com/microsoft/playwright-mcp): its command-line flags.

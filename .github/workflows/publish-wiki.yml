@@ -25,7 +25,7 @@ concurrency:
 
 env:
   # invisible_playwright_mcp's main on 2026-10-09: the converter this wiki is rendered with.
-  CONVERTER_REPO: feder-cr/invisible_playwright_mcp
+  CONVERTER_REPO: oss-invisible/playwright_mcp
   CONVERTER_REF: b72e8b1937771149ed06b2ba73ccb9cb32a687f8
 
 jobs:

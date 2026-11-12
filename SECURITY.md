@@ -29,12 +29,12 @@ In scope:
 
 Out of scope:
 
-- The Dot's browser: report to [invisible_playwright_mcp](https://github.com/feder-cr/invisible_playwright_mcp) or
-  [invisible_playwright](https://github.com/feder-cr/invisible_playwright)
+- The Dot's browser: report to [invisible_playwright_mcp](https://github.com/oss-invisible/playwright_mcp) or
+  [invisible_playwright](https://github.com/oss-invisible/playwright)
 - QEMU, Firefox and other upstream projects: report to them directly
 
 Not security issues:
 
 - A site detecting or blocking the browser: open a regular issue in
-  [invisible_playwright](https://github.com/feder-cr/invisible_playwright/issues)
+  [invisible_playwright](https://github.com/oss-invisible/playwright/issues)
 - What a model chooses to do with permissions you set to allow

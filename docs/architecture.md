@@ -1054,7 +1054,7 @@ ignores anything else.
   address-echo services of the library (`api.ipify.org`, `icanhazip.com`,
   `checkip.amazonaws.com`, from the VM's egress, or through the identity's proxy
   when it has one) to learn the exit address for the timezone and locale; to the library's launch counter
-  (a download of a file of `feder-cr/firefox_antidetect_patch`'s releases,
+  (a download of a file of `oss-invisible/firefox_antidetect_patch`'s releases,
   switched off only by a preference the MCP server gives no way to pass); and
   it probes the exit's capabilities and caches the answer in
   `/tmp/exit_capability.json`; and it keeps its GeoIP database current from
@@ -1427,7 +1427,7 @@ runs at most once. Section 8.8 says how the gate does this.
 ### 8.5 OpenRouter
 
 `POST https://openrouter.ai/api/v1/chat/completions` with
-`HTTP-Referer: https://github.com/feder-cr/invisible_dots` and `X-Title: invisible_dots`
+`HTTP-Referer: https://github.com/oss-invisible/dots` and `X-Title: invisible_dots`
 (sent only when the base URL's host is `openrouter.ai`, so a stand-in used by
 tests never receives them), the key from memory (section 4.3). Tool calling in
 the OpenAI format, `tool_choice: "auto"`, every request streamed (with

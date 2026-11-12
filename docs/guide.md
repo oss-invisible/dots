@@ -19,8 +19,8 @@ OpenRouter, paid with your key.
   message, the next task or one of its own automations; disk, identities,
   memory and skills stay.
 - **A browser built not to look automated.** The only browser of a Dot is
-  [invisible-playwright-mcp](https://github.com/feder-cr/invisible_playwright_mcp),
-  on [invisible_playwright](https://github.com/feder-cr/invisible_playwright): a
+  [invisible-playwright-mcp](https://github.com/oss-invisible/playwright_mcp),
+  on [invisible_playwright](https://github.com/oss-invisible/playwright): a
   Firefox patched in C++, with the fingerprint set inside the engine instead of
   injected into the page. Each identity keeps its own profile and fingerprint.
 - **It learns, as Claude Code does.** The Dot keeps its own memory, notes in
@@ -89,8 +89,8 @@ Install Node, Go and Git, clone, build the command line, run `setup --all`, run
 ```powershell
 winget install -e --id OpenJS.NodeJS.LTS; winget install -e --id GoLang.Go; winget install -e --id Git.Git
 $env:Path = [Environment]::GetEnvironmentVariable("Path", "Machine") + ";" + [Environment]::GetEnvironmentVariable("Path", "User")
-git clone https://github.com/feder-cr/invisible_dots
-cd invisible_dots
+git clone https://github.com/oss-invisible/dots
+cd dots
 npm ci
 npm run build --workspace @invisible-dots/cli
 ```
@@ -101,8 +101,8 @@ npm run build --workspace @invisible-dots/cli
 curl -fsSL https://deb.nodesource.com/setup_24.x | sudo -E bash -
 sudo apt-get install -y nodejs git
 sudo snap install go --classic
-git clone https://github.com/feder-cr/invisible_dots
-cd invisible_dots
+git clone https://github.com/oss-invisible/dots
+cd dots
 npm ci
 npm run build --workspace @invisible-dots/cli
 ```
@@ -392,7 +392,7 @@ closing first, and at most 20 exist. Screenshots go to the model and are never
 stored.
 
 How well the browser holds up against bot checks is measured in
-[invisible_playwright's README](https://github.com/feder-cr/invisible_playwright),
+[invisible_playwright's README](https://github.com/oss-invisible/playwright),
 on the suites it names. invisible_dots adds no claim of its own: a site can
 still refuse a Dot for what it does, and the terms of the sites you point it at
 still apply.
@@ -628,7 +628,7 @@ it, and to whom:
 
 - **OpenRouter** gets the conversation, the tool results and what the Dot
   reads, under your key. Requests carry the headers
-  `HTTP-Referer: https://github.com/feder-cr/invisible_dots` and `X-Title: invisible_dots`.
+  `HTTP-Referer: https://github.com/oss-invisible/dots` and `X-Title: invisible_dots`.
 - **Telegram and WhatsApp** carry the messages and approval prompts of a
   linked channel, and can read them. Link previews are off, so neither
   service fetches a link of a message on its own; a person who taps a link
@@ -639,7 +639,7 @@ it, and to whom:
   packages, the browser engine) serve the downloads when you build them; on
   Windows, `setup` downloads the official QEMU installer.
 - **The browser layer.**
-  [invisible-playwright-mcp's privacy policy](https://github.com/feder-cr/invisible_playwright_mcp#privacy-policy)
+  [invisible-playwright-mcp's privacy policy](https://github.com/oss-invisible/playwright_mcp#privacy-policy)
   says each browser launch fetches a one-line counter file from a GitHub
   release, carrying no identifier.
 - **Address-echo services** (`api.ipify.org`, `icanhazip.com`,
@@ -814,8 +814,8 @@ that stops running fails the build.
 
 - [nanobot](https://github.com/HKUDS/nanobot), the agent the Dot's engine is a
   fork of.
-- [invisible_playwright](https://github.com/feder-cr/invisible_playwright) and
-  [invisible-playwright-mcp](https://github.com/feder-cr/invisible_playwright_mcp),
+- [invisible_playwright](https://github.com/oss-invisible/playwright) and
+  [invisible-playwright-mcp](https://github.com/oss-invisible/playwright_mcp),
   the Dot's browser.
 - [QEMU](https://www.qemu.org), [Ubuntu cloud images](https://cloud-images.ubuntu.com),
   [PGlite](https://pglite.dev), [Next.js](https://nextjs.org) and

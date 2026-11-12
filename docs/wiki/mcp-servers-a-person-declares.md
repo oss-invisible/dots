@@ -101,4 +101,4 @@ every log, row and disk file for the secret after it. It passes its 16 steps.
 - [Claude Code: MCP](https://docs.anthropic.com/en/docs/claude-code/mcp).
 - [Codex: configuration, `mcp_servers`](https://github.com/openai/codex/blob/main/docs/config.md).
 - [nanobot](https://github.com/HKUDS/nanobot): `nanobot/agent/tools/mcp.py`.
-- The architecture, [sections 7 and 8.3](https://github.com/feder-cr/invisible_dots/blob/main/docs/architecture.md).
+- The architecture, [sections 7 and 8.3](https://github.com/oss-invisible/dots/blob/main/docs/architecture.md).

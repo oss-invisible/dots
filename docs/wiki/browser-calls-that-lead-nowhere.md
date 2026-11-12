@@ -96,7 +96,7 @@ the browser server: see
 - **The two timeouts belong to the library.** The 31-second failure matches
   the 30 seconds `invisible_playwright` gives `Browser.newPage`, which the first
   navigation of a launch calls, while the navigation itself has 45. It is
-  reported there ([invisible_playwright#321](https://github.com/feder-cr/invisible_playwright/issues/321)),
+  reported there ([invisible_playwright#321](https://github.com/oss-invisible/playwright/issues/321)),
   not worked around in the engine.
 - **The reads that fail right after a Google search** are not explained. The
   events do not keep the error text, and a probe with the local copy of the
@@ -113,7 +113,7 @@ does not save.
 
 - The analysis scripts read the saved events of `tests/bench/` runs
   (`/work/bench-jobs/*/events/*.json`) and the test server's Dots.
-- [invisible_playwright](https://github.com/feder-cr/invisible_playwright):
+- [invisible_playwright](https://github.com/oss-invisible/playwright):
   key names (`_juggler/keyboard.py`), `Browser.newPage` (`_juggler/server.py`).
-- [invisible-playwright-mcp](https://github.com/feder-cr/invisible_playwright_mcp):
+- [invisible-playwright-mcp](https://github.com/oss-invisible/playwright_mcp):
   `browser_read_text` and `browser_snapshot` (`mcp/actions.py`).

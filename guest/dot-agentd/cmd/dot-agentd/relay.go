@@ -8,7 +8,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/feder-cr/dots/guest/dot-agentd/internal/agentd"
+	"github.com/oss-invisible/dots/guest/dot-agentd/internal/agentd"
 )
 
 // envFlags collects repeated --env NAME=VALUE flags.

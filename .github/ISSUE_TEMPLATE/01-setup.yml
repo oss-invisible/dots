@@ -7,7 +7,7 @@ body:
     attributes:
       value: |
         Use this when the host never gets to a working Dot. If a Dot runs but does something wrong, use the bug report.
-        The guide's [troubleshooting](https://github.com/feder-cr/invisible_dots/blob/main/docs/guide.md#troubleshooting) covers the common failures.
+        The guide's [troubleshooting](https://github.com/oss-invisible/dots/blob/main/docs/guide.md#troubleshooting) covers the common failures.
 
   - type: dropdown
     id: os

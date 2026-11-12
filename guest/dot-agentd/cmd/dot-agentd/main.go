@@ -27,7 +27,7 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/feder-cr/dots/guest/dot-agentd/internal/agentd"
+	"github.com/oss-invisible/dots/guest/dot-agentd/internal/agentd"
 )
 
 func envOr(name, def string) string {

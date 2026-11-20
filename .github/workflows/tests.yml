@@ -312,8 +312,14 @@ jobs:
           python -m invisible_core.claims --selftest
           python -m invisible_core.claims
 
+  # Every commit this event makes public must carry a GitHub noreply address.
+  # Judged by the core, called from main; pushes to branches without a pull
+  # request and to tags go through noreply-identity.yml.
+  noreply-identity:
+    uses: oss-invisible/core/.github/workflows/noreply-identity.yml@main
+
   gate:
-    needs: [node, postgres, whatsapp-client, iso, go, engine, smoke, browser-smoke, web, english, claims]
+    needs: [node, postgres, whatsapp-client, iso, go, engine, smoke, browser-smoke, web, english, claims, noreply-identity]
     if: always()
     runs-on: ubuntu-latest
     steps:
@@ -325,7 +331,7 @@ jobs:
           node -e '
             const needs = JSON.parse(process.env.RESULTS);
             const names = Object.keys(needs);
-            if (names.length !== 11) { console.error(`expected 11 jobs, got ${names.length}`); process.exit(1); }
+            if (names.length !== 12) { console.error(`expected 12 jobs, got ${names.length}`); process.exit(1); }
             let ok = true;
             for (const name of names) {
               console.log(`${name}: ${needs[name].result}`);

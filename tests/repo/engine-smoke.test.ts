@@ -169,4 +169,15 @@ describe("the engine smoke", () => {
     expect(entry).toContain('[ "$status" -eq 0 ]');
     expect(entry.trimEnd().split("\n").pop()).toBe("exit 1");
   });
+
+  it("starts the smoke's Ubuntu from an image pinned by digest, because its apt packages come from a fixed snapshot", () => {
+    // The browser suite installs pins.json's packages as of apt_snapshot on top of what the image holds. A moving
+    // tag brings an image newer than the snapshot (perl-base newer than the snapshot's perl wants), and apt fails
+    // with "held broken packages" on the day Canonical pushes it, with no change in the repository.
+    const entry = code(read(join(smoke, "run.sh")));
+    expect(entry).toMatch(/^UBUNTU_IMAGE=ubuntu:24\.04@sha256:[0-9a-f]{64}$/m);
+    expect(entry).not.toMatch(/ubuntu:24\.04(?!@sha256:[0-9a-f]{64})/);
+    // Every container of the suite starts from it.
+    expect(entry.match(/"\$UBUNTU_IMAGE"/g)?.length).toBe(2);
+  });
 });

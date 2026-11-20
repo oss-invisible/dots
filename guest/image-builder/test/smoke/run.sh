@@ -49,6 +49,14 @@ case "${1:-}" in
     ;;
 esac
 
+# The base image, by digest (the ubuntu:24.04 tag as of 2026-09-30, noble-20260930.1). The browser suite installs
+# the packages of pins.json from the archive as of its apt_snapshot, and apt resolves them against what the image
+# already holds: an image built after the snapshot holds a package (perl-base) newer than the one the snapshot's
+# `perl` depends on, and apt stops with "held broken packages". With the moving tag the run changed on the day
+# Canonical pushed its next image. So the image stays older than pins.json's apt_snapshot; when that snapshot
+# moves, this digest moves to an image built before the new snapshot.
+UBUNTU_IMAGE=ubuntu:24.04@sha256:68ee22004a9109b44973313b02ff7b1de250f1de0f5ecb628d73f579aaff33ac
+
 run_id="idots-smoke-$$-$(date +%s)"
 log=$(mktemp)
 cleanup() {
@@ -65,7 +73,7 @@ docker volume create "$run_id" >/dev/null
 tree_mount=()
 if [ -n "$archive" ]; then
   tree=/work/tree
-  docker run --rm -v "$run_id":/work -v "$archive":/src.tar:ro ubuntu:24.04 \
+  docker run --rm -v "$run_id":/work -v "$archive":/src.tar:ro "$UBUNTU_IMAGE" \
     bash -c 'mkdir /work/tree && tar -xf /src.tar -C /work/tree'
 else
   tree=/tree
@@ -104,7 +112,7 @@ set +e
 # guest's root does.
 docker run --rm --name "$run_id" --shm-size=1g --cap-add NET_ADMIN -v "$run_id":/work "${tree_mount[@]}" \
   -e TREE="$tree" -e AGENTD_BIN=/work/dot-agentd -e SMOKE_SUITE="$suite" "${pin_env[@]}" \
-  ubuntu:24.04 bash "$tree/guest/image-builder/test/smoke/prepare-engine.sh" 2>&1 | tee "$log"
+  "$UBUNTU_IMAGE" bash "$tree/guest/image-builder/test/smoke/prepare-engine.sh" 2>&1 | tee "$log"
 status=${PIPESTATUS[0]}
 set -e
 

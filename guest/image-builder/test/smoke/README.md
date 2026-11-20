@@ -129,7 +129,7 @@ engine) and at a launch (the egress address, for the timezone, and the library's
 
 ## Run it
 
-Only docker is needed, with the images `golang:1.26.8` and `ubuntu:24.04` (pulled when
+Only docker is needed, with the images `golang:1.26.8` and `ubuntu:24.04` (the latter by the digest `run.sh` names; pulled when
 absent; the container downloads the pinned `uv`, the engine's locked wheels and, for the
 browser smoke, the newest browser).
 
